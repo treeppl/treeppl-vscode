@@ -1,0 +1,120 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "TreePPL",
+  "patterns": [
+    {
+      "include": "#line-comment"
+    },
+    {
+      "include": "#block-comment"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#constants"
+    },
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#types"
+    },
+    {
+      "include": "#functions"
+    },
+    {
+      "include": "#variables"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#strings"
+    }
+  ],
+  "repository": {
+    "line-comment": {
+      "name": "comment.line.double-slash.treeppl",
+      "begin": "//",
+      "end": "\n"
+    },
+    "block-comment": {
+      "name": "comment.block.treeppl",
+      "begin": "/\\*",
+      "end": "\\*/"
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.treeppl",
+          "match": "\\b(type|model|function|let|is|in|to|assume|observe|weight|logWeight|resample)\\b"
+        },
+        {
+          "name": "keyword.control.treeppl",
+          "match": "\\b(if|else|for|return)\\b"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.language.treeppl",
+          "match": "\\b(true|false)\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.treeppl",
+          "match": "=|==|!=|<|>|<=|>=|\\+@|\\+|-|\\*@|\\*\\$|\\*|\\$\\*|\\^\\$|/|\\^|!|&&|\\|\\|"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "entity.name.type.treeppl",
+          "match": "\\b([$[:upper:]][_$[:alnum:]]*)\\b(?!\\s*\\()"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "entity.name.function.treeppl",
+          "match": "\\b([$[:alpha:]][_$[:alnum:]]*)\\b(?=\\s*\\()"
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "name": "variable.name.treeppl",
+          "match": "\\b([$[:alpha:]][_$[:alnum:]]*)\\b"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.treeppl",
+          "match": "\\b[+-]?\\d+(\\.\\d)*([Ee][+-]?\\d+)?\\b"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.treeppl",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.treeppl",
+          "match": "\\\\."
+        }
+      ]
+    }
+  },
+  "scopeName": "source.treeppl"
+}

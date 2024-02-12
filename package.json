@@ -1,0 +1,34 @@
+{
+  "name": "treeppl-vscode",
+  "version": "0.0.1",
+  "publisher": "TreePPLTeam",
+  "engines": {
+    "vscode": "^1.49.0"
+  },
+  "displayName": "TreePPL",
+  "description": "TreePPL support in VS Code.",
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "treeppl",
+        "aliases": [
+          "TreePPL"
+        ],
+        "extensions": [
+          ".tppl"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "treeppl",
+        "scopeName": "source.treeppl",
+        "path": "./syntaxes/treeppl.tmLanguage.json"
+      }
+    ]
+  }
+}
